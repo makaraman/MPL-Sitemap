@@ -6,6 +6,7 @@ export let endpoints = [
   `${process.env.API_BASE_URL}cloud-routes/airportpages`,
   `${process.env.API_BASE_URL}cloud-routes/merchantpages`,
   `${process.env.API_BASE_URL}cloud-routes/staticpages`,
+  `${process.env.API_BASE_URL}cloud-routes/blogpages`,
 ];
 export const blacklistApi = [`${process.env.API_BASE_URL}sitemap/blacklist`]
 export const domains = {

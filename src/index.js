@@ -86,12 +86,13 @@ async function generateSitemap(domainBasedUrlLanguage, domainBasedLinks) {
 }
 
 axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
-  axios.spread(async (homepages, airportpages, merchantpages, staticpages) => {
+  axios.spread(async (homepages, airportpages, merchantpages, staticpages, blogpages) => {
     const domainBasedUrls = await groupByDomain([
       ...staticpages.data,
       ...merchantpages.data,
       ...homepages.data,
       ...airportpages.data,
+      ...blogpages?.data || [],
     ]);
 
     //for each domain sitemap entry of that URL should contain list of all alternatives in all other languages
